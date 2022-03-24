@@ -28,7 +28,8 @@ public class Person {
     static Stream<String> toDetail(Person p) {
         return Stream.of(new StringJoiner(", ", Person.class.getSimpleName() + ": ", "")
                 .add("personid=\33[34m" + p.personid + "\33[0m")
-                .add("name='\33[34m" + p.name + "\33[0m'").toString(),
+                .add("name='\33[34m" + p.name + "\33[0m'")
+                        .toString(),
                 "\t" + p.things.flatMap(Thing::toDetail).collect(Collectors.joining("\n\t")));
     }
 }

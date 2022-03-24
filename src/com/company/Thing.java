@@ -24,6 +24,7 @@ public class Thing {
         return Stream.of(new StringJoiner(", ", Thing.class.getSimpleName() + ": ", "")
                 .add("thingid=\033[36m" + thingid + "\033[0m")
                 .add("title='\033[36m" + title + "\033[0m'")
-                .add("dateTime=\033[36m" + dateTime + "\033[0m").toString());
+                .add("dateTime=\033[36m" + dateTime + "\033[0m")
+                .toString());
     }
 }

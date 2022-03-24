@@ -3,7 +3,6 @@ package com.company;
 import java.util.Locale;
 import java.util.Scanner;
 
-
 public class Main {
     static ArrayRepository repository = new ArrayRepository();
     static Scanner scanner = new Scanner(System.in);
@@ -31,8 +30,7 @@ public class Main {
     }
 
     static void startApp(){
-
-        while(true) {
+        while (true) {
             System.out.println("\33[1;30;45m--- MASTER SCREEN ---\33[0m\n");
             repository.readAllPersons().flatMap(Person::toMaster).forEach(System.out::println);
             System.out.print("\n\33[1;30;45m[PERSON] CREATE/READ/UPDATE/DELETE or QUIT:\33[0m ");
@@ -54,7 +52,7 @@ public class Main {
                 } else if (option.equals("d")) {
                     repository.deletePerson(personid);
                 } else if (option.equals("r")) {
-                    while(true) {
+                    while (true) {
                         System.out.println("\33[1;30;104m--- DETAIL SCREEN ---\33[0m\n");
                         repository.readPerson(personid).flatMap(Person::toDetail).forEach(System.out::println);
                         System.out.print("\n\33[1;30;104m[THING] CREATE/UPDATE/DELETE or BACK:\33[0m ");
